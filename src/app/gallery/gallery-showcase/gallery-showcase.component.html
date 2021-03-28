@@ -1,0 +1,33 @@
+<div class="container" [style.width.px]="windowWidth" [style.height.px]="windowHeight - 80" *ngIf="selectedImage">
+    <div class="image-container" [style.height.px]="windowHeight - 180" [style.width.px]="windowWidth" >
+        <div class="title">
+            <div class="type">
+                <div class="box"></div>
+                {{type}}
+            </div>
+            <div class="type-full">
+                {{selectedImage.description}}
+            </div>
+        </div>
+        <img [src]="selectedImage.url" [style.height.px]="windowHeight - 180" [style.width.px]="windowWidth"  />
+    </div>
+    <div class="bottom" [style.width.px]="windowWidth - windowWidth*0.2" >
+        <div class="left">
+            <div class="title">
+                <div class="box">
+                </div>
+                {{selectedImage.title}}
+            </div>
+            <div class="description">
+                {{ selectedImage.description }}
+            </div>
+        </div>
+        <div class="right">
+            <div (click)="selectImage(image)" [ngClass]="{'image-box': true, 'selected': image.selected}" *ngFor="let image of images">
+                <img [src]="image.url">
+                <div class="image-overlay"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

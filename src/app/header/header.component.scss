@@ -1,0 +1,72 @@
+@import 'colors';
+
+:host {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10%;
+}
+.left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2rem;
+    .logo-box {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1rem;
+        background-color: $primaryColor;
+    }
+    .logo {
+        display: block;
+        font-size: 2rem;
+    }
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    .slider-container {
+        height: 0.3rem;
+        width: 600px;
+        .slider {
+            width: 100px;
+            margin: 0 25px;
+            height: 0.3rem;
+            background-color: $primaryColor;
+            transition: 0.5s all ease-in-out;
+            &.about {
+                transform: translateX(0);
+            }
+            &.gallery {
+                transform: translateX(150px);
+            }
+            &.buy {
+                transform: translateX(300px);
+            }
+            &.contact {
+                transform: translateX(450px);
+            }
+        }
+    }
+    .list {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin: 0;
+        padding:0;
+        li {
+            width: 150px;
+            padding-top: 2.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s all ease-in-out;;
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover, &.active {
+                color: $primaryColor;
+            }
+        }
+    }
+}

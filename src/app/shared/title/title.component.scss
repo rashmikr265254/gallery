@@ -1,0 +1,29 @@
+:host {
+    width: 80%;
+    margin: 0 10%;
+    overflow: hidden;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.top {
+    transition: 1s all ease-in-out;
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: 400;
+    margin: 3rem 0 1.5rem;
+}
+.bottom {
+    transition: 0.7s all ease-in-out;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 0rem;
+    color: gray;
+}
+
+.top, .bottom {
+    transform: translateY(-200px);
+    &.show {
+        transform: translateY(0);
+    }
+}

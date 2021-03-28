@@ -1,0 +1,58 @@
+@import 'colors';
+
+:host {
+    width: 100%;
+    position: relative;
+}
+.title-bar {
+    height: 200px;
+    transform: scaleY(1);
+    transition: 2s 0s all;
+    &.hidden {
+        transform: scaleY(0);
+    }
+}
+.sub-sections-selector {
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10%;
+    height: 650px;
+    transform: scaleY(1);
+    overflow: hidden;
+    position: relative;
+    &.not-visible {
+        transform: scaleY(0);
+        app-sub-gallery {
+            transform: translateY(700px);
+        }
+    }
+    app-sub-gallery {
+        width: 30%;
+        height: 100%;
+        transform: translateY(0);
+        transition: 1s 1s all ease-in-out;
+    }
+}
+app-gallery-showcase {
+    width: 100%;
+    transform: scaleY(0);
+    transition: 1s 1s all ease-in-out;
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    &.visible {
+        transform: scaleY(1);
+    }
+}
+.gallery-background {
+    z-index: 5;
+    position: relative;
+    top: -500px;
+    height: 650px;
+    left: 0;
+    bottom: 0;
+    background-color: $primaryColor;
+    width: 100%;
+}

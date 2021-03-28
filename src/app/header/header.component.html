@@ -1,0 +1,15 @@
+<div class="left">
+    <span class="logo-box"></span>
+    <span class="logo">The Residence</span>
+</div>
+<div class="right">
+    <div class="slider-container">
+        <div class="slider {{selection}}"></div>
+    </div>
+    <ul class="list">
+        <li (click)="changeSelection('about')" [ngClass]="{'active': selection === 'about'}">About</li>
+        <li (click)="changeSelection('gallery')" [ngClass]="{'active': selection === 'gallery'}">Gallery</li>
+        <li (click)="changeSelection('buy')" [ngClass]="{'active': selection === 'buy'}">How to Buy</li>
+        <li (click)="changeSelection('contact')" [ngClass]="{'active': selection === 'contact'}">Contact</li>
+    </ul>
+</div>

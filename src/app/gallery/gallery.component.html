@@ -1,0 +1,8 @@
+<app-title [ngClass]="{'hidden': currentSelection !== 'none', 'title-bar': true}" name="Gallery" subtitle="Gallery is divided into section according to their residences" [isVisible]="currentSelection === 'none'"></app-title>
+<div [ngClass]="{'sub-sections-selector': true, 'not-visible': currentSelection !== 'none'} ">
+    <app-sub-gallery (click)="changeSubSection('construction')" type="construction" typeFull="Construction Process" title="See construction process" photoCount="4"></app-sub-gallery>
+    <app-sub-gallery (click)="changeSubSection('exterior')" type="exterior" typeFull="Exterior" title="Exterior View for apartments" photoCount="4"></app-sub-gallery>
+    <app-sub-gallery (click)="changeSubSection('interior')" type="interior" typeFull="Interior" title="Premium level apartments with best view of capital" photoCount="4"></app-sub-gallery>
+</div>
+<app-gallery-showcase [style.width.px]="windowWidth" [ngClass]="{'visible': currentSelection !== 'none'}" [images]="currentShowcase" [type]="currentShowcaseType"></app-gallery-showcase>
+<div class="gallery-background"></div>
